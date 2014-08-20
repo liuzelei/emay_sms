@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # EmaySms
 
 TODO: Write a gem description
@@ -27,3 +28,9 @@ TODO: Write usage instructions here
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create a new Pull Request
+=======
+emay_sms
+========
+
+亿美软通短信接口
+>>>>>>> c7dfe596eb2180ee8474746591f9f6491550c3d0
