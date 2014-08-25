@@ -10,7 +10,7 @@ EmaySms.setup do |config|
   config.server   = "http://sdk4report.eucp.b2m.cn:8080/sdk/SDKService?wsdl"
   config.account  = "0SDK-EAA-6688-JETNS"
   config.password = "123123"
-  config.secrect  = "28116b023cd11042e5c2f6c830692c3b"
+  config.secrect  = "123123"
 end
 
 RSpec.configure do |config|
