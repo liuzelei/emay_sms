@@ -26,7 +26,6 @@ module EmaySms
                                               srcCharset: "UTF-8",
                                              smsPriority: 1,
                                                    smsID: 0 })
-
     end
   end
 end
