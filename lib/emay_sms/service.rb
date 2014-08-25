@@ -17,6 +17,7 @@ module EmaySms
     end
 
     def send(message, mobiles = [])
+      p EmaySms.config
       @client.call(:send_sms, message: { softwareSerialNo: EmaySms.config.account,
                                                      key: EmaySms.config.secrect,
                                                 sendTime: nil,
