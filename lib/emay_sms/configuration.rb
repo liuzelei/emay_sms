@@ -29,7 +29,7 @@ module EmaySms
     end
 
     def secrect=(secrect)
-      @secrect
+      @secrect = secrect
     end
   end
 end
