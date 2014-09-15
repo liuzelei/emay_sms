@@ -31,5 +31,13 @@ module EmaySms
     def secrect=(secrect)
       @secrect = secrect
     end
+
+    def sign
+      @sign ||= "【未知来源】"
+    end
+
+    def sign=(sign)
+      @sign = "【#{sign}】"
+    end
   end
 end

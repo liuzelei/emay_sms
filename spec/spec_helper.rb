@@ -11,6 +11,7 @@ EmaySms.setup do |config|
   config.account  = "0SDK-EAA-6688-JETNS"
   config.password = "123123"
   config.secrect  = "123123"
+  config.sign     = "就诊通"
 end
 
 RSpec.configure do |config|
