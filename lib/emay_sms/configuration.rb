@@ -33,7 +33,7 @@ module EmaySms
     end
 
     def sign
-      @sign ||= "【未知来源】"
+      @sign
     end
 
     def sign=(sign)
