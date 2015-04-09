@@ -28,12 +28,9 @@ module EmaySms
       "#{EmaySms.config.sign}#{message}"
     end
 
-    def register
-      # @client.call(:regist_ex, message: { softwareSerialNo: EmaySms.config.account, 
-      #                                                  key: EmaySms.config.secrect, 
-      #                                           serialpass: EmaySms.config.password })
+    def active
       response = client.call(:regist_ex, message: { arg0: EmaySms.config.account, 
-                                                    arg1: EmaySms.config.secrect, 
+                                                    arg1: EmaySms.config.secret, 
                                                     arg2: EmaySms.config.password })
       if response.body[:regist_ex_response].nil? || response.body[:regist_ex_response][:return] != "0"
         return false
@@ -42,18 +39,27 @@ module EmaySms
       end
     end
 
+    def register(hash = {})
+      response = client.call(:regist_detail_info, message: { arg0: EmaySms.config.account, 
+                                                             arg1: EmaySms.config.secret, 
+                                                             arg2: hash[:name],
+                                                             arg3: hash[:contact],
+                                                             arg4: hash[:phone_number],
+                                                             arg5: hash[:mobile],
+                                                             arg6: hash[:email],
+                                                             arg7: hash[:fax],
+                                                             arg8: hash[:address],
+                                                             arg9: hash[:post_code]})
+      if response.body[:regist_detail_info_response].nil? || response.body[:regist_detail_info_response][:return] != "0"
+        return false
+      else
+        return true
+      end
+    end
+
     def send(message, mobiles = [])
-      # response = @client.call(:send_sms, message: { softwareSerialNo: EmaySms.config.account,
-      #                                                            key: EmaySms.config.secrect,
-      #                                                       sendTime: "",
-      #                                                        mobiles: mobiles,
-      #                                                     smsContent: message,
-      #                                                      addSerial: "",
-      #                                                     srcCharset: "UTF-8",
-      #                                                    smsPriority: 1,
-      #                                                          smsID: 0 })
       response = client.call(:send_sms, message: { arg0: EmaySms.config.account,
-                                                   arg1: EmaySms.config.secrect,
+                                                   arg1: EmaySms.config.secret,
                                                    arg2: "",
                                                    arg3: mobiles,
                                                    arg4: EmaySms.sign_message(message),

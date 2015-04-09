@@ -24,12 +24,12 @@ module EmaySms
       @password = password
     end
 
-    def secrect
-      @secrect ||= SecureRandom.hex(10)
+    def secret
+      @secret ||= SecureRandom.hex(10)
     end
 
-    def secrect=(secrect)
-      @secrect = secrect
+    def secret=(secret)
+      @secret = secret
     end
 
     def sign
