@@ -24,8 +24,12 @@ module EmaySms
                    pretty_print_xml: true)
     end
 
-    def sign_message(message)
-      "#{EmaySms.config.sign}#{message}"
+    def sign_message(message, sign = nil)
+      if sign.nil?
+        "#{EmaySms.config.sign}#{message}"
+      else
+        "【#{sign}】#{message}"
+      end
     end
 
     def active
@@ -57,12 +61,12 @@ module EmaySms
       end
     end
 
-    def send(message, mobiles = [])
+    def send(message, mobiles = [], sign = nil)
       response = client.call(:send_sms, message: { arg0: EmaySms.config.account,
                                                    arg1: EmaySms.config.secret,
                                                    arg2: "",
                                                    arg3: mobiles,
-                                                   arg4: EmaySms.sign_message(message),
+                                                   arg4: EmaySms.sign_message(message, sign),
                                                    arg5: "",
                                                    arg6: "UTF-8",
                                                    arg7: 1,
