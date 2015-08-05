@@ -16,4 +16,9 @@ describe "Service" do
     response = EmaySms.send("订单 #{Time.now.to_i} 已经团购成功, 请访问 http://www.baidu.com 支付.", ["13817513107", "18101801755", "18616015606"])
     expect(response).to be true
   end
+
+  it "should send message by custom sign" do
+    response = EmaySms.send("订单 #{Time.now.to_i} 已经团购成功, 请访问 http://www.baidu.com 支付.", ["13681695220"], "中国移动")
+    expect(response).to be true
+  end
 end

@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    emay_sms (0.1.0)
+    emay_sms (0.1.1)
       savon (~> 2.7.2)
 
 GEM
@@ -51,7 +51,7 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
-    rack (1.6.0)
+    rack (1.6.4)
     rake (10.3.2)
     rb-fsevent (0.9.4)
     rb-inotify (0.9.5)
@@ -87,7 +87,7 @@ GEM
     thor (0.19.1)
     timers (4.0.1)
       hitimes
-    uuid (2.3.7)
+    uuid (2.3.8)
       macaddr (~> 1.0)
     wasabi (3.3.1)
       httpi (~> 2.0)
