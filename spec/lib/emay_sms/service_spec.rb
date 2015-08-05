@@ -13,7 +13,7 @@ describe "Service" do
   end
 
   it "should send message" do
-    response = EmaySms.send("测试 #{Time.now.to_i}", ["13817513107", "18101801755", "18616015606"])
+    response = EmaySms.send("订单 #{Time.now.to_i} 已经团购成功, 请访问 http://www.baidu.com 支付.", ["13817513107", "18101801755", "18616015606"])
     expect(response).to be true
   end
 end
